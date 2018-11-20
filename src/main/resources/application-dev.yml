@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: reserva-citas-demonio
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  retraso-inicial: 5000
+  intervalo:
+    cada-cinco-minutos: 300000
+    diario-siete-am: 0 0 7 * * ? 
+  uri:
+    cada-cinco-minutos: http://reserva-citas-servidor-backend:8080/daemon/cincomin
+    diario-siete-am: http://reserva-citas-servidor-backend:8080/daemon/diariosieteam
+        
+logging:
+  level:
+    pe.edu.unmsm.sistemas.servidorclinica:
+      daemon: TRACE

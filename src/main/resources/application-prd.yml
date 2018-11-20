@@ -1,0 +1,33 @@
+server:
+  context-path: /api/reservacitas/v1
+
+spring:
+  application:
+    name: reserva-citas-servidor
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: TP2.2018I.reservacitas.unmsm@gmail.com
+    password: reservacitas@$
+    properties:
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.auth: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+
+app:
+  firebase:
+    database-url: https://reserva-de-cit.firebaseio.com
+    auth-key-path: classpath:firebase_auth_key.json
+  email:
+    alias: Reserva de Citas - Clínica UNMSM
+  confirmaciones:
+    retraso-inicial: 5000
+    intervalo: 900000
+        
+logging:
+  level:
+    pe.edu.unmsm.sistemas:
+      reservas: DEBUG
