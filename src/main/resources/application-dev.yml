@@ -2,7 +2,7 @@ spring:
   application:
     name: reserva-citas-demonio
   jackson:
-    default-property-inclusion: non_null
+    default-property-inclusion: non-null
 
 app:
   retraso-inicial: 5000
@@ -10,10 +10,16 @@ app:
     cada-cinco-minutos: 300000
     diario-siete-am: 0 0 7 * * ? 
   uri:
-    cada-cinco-minutos: http://reserva-citas-servidor-backend:8080/daemon/cincomin
-    diario-siete-am: http://reserva-citas-servidor-backend:8080/daemon/diariosieteam
+    cada-cinco-minutos: https://reservacita-223020.appspot.com/daemon/cincomin
+    diario-siete-am: https://reservacita-223020.appspot.com/daemon/diariosieteam
         
 logging:
   level:
     pe.edu.unmsm.sistemas.servidorclinica:
       daemon: TRACE
+  file: appfile.log
+endpoints:  enabled: false  logfile:    enabled: true
+    sensitive: false
+    path: /actuator/logfile
+    
+    
